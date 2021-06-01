@@ -1,4 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+
+
 table,tr,th, td{
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+body{
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+header{
+    background-color: rgb(171, 180, 44);
+    height: 100px;
+    position: relative;
+    
+}
+
+header img {
+width: 15%;
+height: 15%;
+position: relative;
+left: 60px;
+padding-top: 15px;
+}
+
+
+header h2 { 
+
+    position: relative;
+    bottom: 65px;
+    left: 290px;
+    
+
+    
+
+}
+nav ul{
+    position: relative;
+    bottom: 110px;
+    left: 600px;
+
+    
+}
+
+nav ul li {
+    display: inline-block;
+    padding-right: 50px;
+    /* direction: none;
+    color: honeydew; */
+
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: honeydew;
+}
+
+
+#hero {
+   
+        background-image: url("https://raw.githubusercontent.com/LTUC/amman-201d26/main/class-08/lab-b/assets/chinook.jpg");
+        /* background-color: #cccccc; */
+
+        height: 183px;
+
+}
+
+#heroBox {
+    background-color: rgba(221, 218, 50, 0.678);
+    display: block;
+    margin:30px auto 30px auto;
+    width: 483px;
+    padding: 20px;
+    text-align: center;
+}
+
