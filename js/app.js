@@ -68,6 +68,12 @@ let tableElement = document.createElement('table');
 parent.appendChild(tableElement);
 
 
+
+
+
+
+
+
 // ------------------------------------------HEADER ROW------------------------------------------------------
 
 function headHoursRow() {
@@ -111,7 +117,12 @@ function headHoursRow() {
 
 
 
+
+
 // ----------------------------LOCATIONs RESULTS PROTOTYPE RENDER -----------------------------------------------------
+
+
+
 Location.prototype.render=function(){
 
     // you should worry about making it work for one shop
@@ -157,6 +168,11 @@ Location.prototype.render=function(){
     totalTd.textContent=this.total;
 
 }
+
+
+
+
+
 
 
 
@@ -257,6 +273,71 @@ function makingFooterRow() {
 
 
 
+//make event listener 
+// add element by Id
+let newLocationForm= document.getElementById("newLocationForm");
+
+// add event listner
+newLocationForm.addEventListener('submit',submitter);
+
+function submitter(event){
+    event.preventDefault();
+    
+
+    let newLocation=event.target.nameLocation.value;
+
+
+    let newMinCustmors= event.target.minCustomers.value;
+
+    let newManCustmors= event.target.maxCustomers.value;
+
+    let newAvgCookies= event.target.avgCookies.value;
+
+
+    let addedLocation= new Location(newLocation,newMinCustmors,newManCustmors,newAvgCookies);
+ 
+
+    function validate() {
+        if (newLocation  && newMinCustmors && newManCustmors&& newAvgCookies == '') {
+            alert('you must fill out everything ')
+            }
+        
+    }
+
+    validate();
+    console.log(addedLocation);
+    console.log(newMinCustmors);
+    
+
+    
+    // addedLocation.calcCustomersEachHour();
+    // addedLocation.getCookiesNumHourly();
+    // addedLocation.render();
+    
+
+    
+    
+    tableElement.textContent='';
+    headHoursRow();
+    
+for (let i = 0; i < shops.length; i++) {
+   
+    shops[i].calcCustomersEachHour();
+    shops[i].getCookiesNumHourly();
+    shops[i].render();
+   
+}
+
+
+
+makingFooterRow();
+
+
+
+
+
+}
+
 
 
 
@@ -281,9 +362,11 @@ console.log(shops);
 headHoursRow();
 
 for (let i = 0; i < shops.length; i++) {
+   
     shops[i].calcCustomersEachHour();
     shops[i].getCookiesNumHourly();
     shops[i].render();
+   
 }
 
 makingFooterRow();
