@@ -291,31 +291,14 @@ function submitter(event){
 
     let newManCustmors= event.target.maxCustomers.value;
 
-    let newAvgCookies= event.target.avgCookies.value;
+    let newAvgCookies= parseFloat((event.target.avgCookies.value));
 
 
     let addedLocation= new Location(newLocation,newMinCustmors,newManCustmors,newAvgCookies);
  
 
-    function validate() {
-        if (newLocation  && newMinCustmors && newManCustmors&& newAvgCookies == '') {
-            alert('you must fill out everything ')
-            }
-        
-    }
-
-    validate();
-    console.log(addedLocation);
-    console.log(newMinCustmors);
     
 
-    
-    // addedLocation.calcCustomersEachHour();
-    // addedLocation.getCookiesNumHourly();
-    // addedLocation.render();
-    
-
-    
     
     tableElement.textContent='';
     headHoursRow();
